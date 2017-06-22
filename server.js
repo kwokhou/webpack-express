@@ -14,7 +14,6 @@ var webpackConfig = require('./webpack.config');
 var compiler = webpack(webpackConfig);
 var middleware = webpackMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath,
-  contentBase: 'src',
   stats: {
     colors: true,
     hash: false,

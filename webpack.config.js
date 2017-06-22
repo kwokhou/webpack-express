@@ -27,10 +27,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            "presets": ["react", "es2015", "stage-0", "react-hmre"]
-          }
+          loader: 'babel-loader'
         }
       }
     ]
@@ -46,7 +43,6 @@ module.exports = {
       disable: false,
       allChunks: true
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
