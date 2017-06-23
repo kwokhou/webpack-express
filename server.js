@@ -7,12 +7,12 @@ var app = express();
 var path = require("path");
 
 var webpack = require('webpack');
-var webpackMiddleware = require('webpack-dev-middleware');
+var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 var webpackConfig = require('./webpack.config');
 
 var compiler = webpack(webpackConfig);
-var middleware = webpackMiddleware(compiler, {
+var middleware = webpackDevMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath,
   stats: {
     colors: true,
