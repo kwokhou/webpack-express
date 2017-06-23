@@ -15,9 +15,26 @@ h1 {
   color: blue;
   font-size: 29px;
   text-transform: uppercase;
+  padding: 15px 30px;
 }
 
 p {
   color: blue;
   font-size: 14px;
+  padding: 15px 30px;
+}
+
+.form-row {
+  padding: 15px 30px;
+}
+
+.form-row__label {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.form-row__input {
+  padding: 8px;
+  margin-left: 10px;
+  width: 300px;
 }

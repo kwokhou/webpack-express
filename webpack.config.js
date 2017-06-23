@@ -10,8 +10,8 @@ module.exports = {
     path.join(__dirname, "/client/app.js"),
   ],
   output: {
-    path: path.resolve(__dirname, "/dist/"),
-    filename: "[name].js",
+    path: path.resolve(__dirname, "build/client/public"),
+    filename: "bundle.js",
     publicPath: "/"
   },
   module: {
@@ -26,9 +26,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: 'babel-loader'
       }
     ]
   },
@@ -36,7 +34,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./client/index.ejs",
       inject: "body",
-      filename: "index.html"
+      filename: "index.html",
+      hash: true
     }),
     new ExtractTextPlugin({
       filename: "app.css",

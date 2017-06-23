@@ -5,7 +5,6 @@ export default class InputComponent extends React.Component {
     return (
       <section>
         <h1>Hello World</h1>
-        <p>Lorem ipsum dolar sit met</p>
       </section>
     )
   }

@@ -8,7 +8,7 @@ export default class FormRowComponent extends React.Component {
     <div>
       <InputComponent></InputComponent>
       <div className="form-row">
-        <label className="form-row__label">Name</label>
+        <label className="form-row__label">Email</label>
         <input className="form-row__input" type="text"></input>
       </div>
     </div>
