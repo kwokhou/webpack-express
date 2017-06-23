@@ -14,14 +14,7 @@ var webpackConfig = require('./webpack.config');
 var compiler = webpack(webpackConfig);
 var middleware = webpackDevMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath,
-  stats: {
-    colors: true,
-    hash: false,
-    timings: true,
-    chunks: false,
-    chunkModules: false,
-    modules: false
-  }
+  noInfo: true
 });
 
 app.use(middleware);
