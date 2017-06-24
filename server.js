@@ -5,6 +5,7 @@
 var express = require('express');
 var app = express();
 var path = require("path");
+const routes = require('./server/routes');
 
 var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
@@ -19,10 +20,10 @@ var middleware = webpackDevMiddleware(compiler, {
 
 app.use(middleware);
 app.use(webpackHotMiddleware(compiler));
-app.get('*', function response(req, res) {
-  res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'build/client/public/index.html')));
-  res.end();
-});
+// app.get('*', function response(req, res) {
+//   res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'build/client/public/index.html')));
+//   res.end();
+// });
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -31,9 +32,11 @@ app.get('*', function response(req, res) {
 app.use(express.static('build/client/public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/build/client/public/index.html');
-});
+// app.get("/", function (request, response) {
+//   response.sendFile(__dirname + '/build/client/public/index.html');
+// });
+
+app.use("/", routes);
 
 app.get("/dreams", function (request, response) {
   response.send(dreams);
