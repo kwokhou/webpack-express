@@ -7,11 +7,12 @@
   "description": "What am I about?",
   "main": "server.js",
   "scripts": {
-    "start": "nodejs-dashboard babel-watch dev.server.js",
-    "dash": "node --exec 'nodejs-dashboard babel-watch' dev.server.js"
+    "start": "babel-watch server.js",
+    "dash": "nodejs-dashboard babel-watch dev.server.js"
   },
   "dependencies": {
     "express": "^4.15.3",
+    "mongoose": "^4.11.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
