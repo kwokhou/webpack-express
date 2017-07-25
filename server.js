@@ -11,20 +11,6 @@ import mongoose from 'mongoose';
 const mydb = 'mongodb://localhost/test';
 mongoose.connect(mydb);
 
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var webpackConfig = require('./webpack.config');
-
-var compiler = webpack(webpackConfig);
-var middleware = webpackDevMiddleware(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  noInfo: true
-});
-
-app.use(middleware);
-app.use(webpackHotMiddleware(compiler));
-
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('build/client/public'));
 

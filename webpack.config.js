@@ -6,7 +6,6 @@ var path = require("path");
 module.exports = {
   devtool: 'eval-source-map',
   entry: [
-    "webpack-hot-middleware/client",
     path.join(__dirname, "/client/app.js"),
   ],
   output: {
